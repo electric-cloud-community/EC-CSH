@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org" />
+  <meta content="text/html; charset=us-ascii" http-equiv=
+  "content-type" />
+
+  <title>ElectricFlow Plugin for @PLUGIN_KEY@</title>  
+<style type="text/css">
+.pluginname {
+font-size: xx-large;
+color: #000099;
+}
+.sectionhead {
+font-size: xx-large;
+color: #687291;
+}
+.sectionnote {
+font-style: italic;
+}
+.procedure {
+margin-left: 40px;
+}
+.procedure h3 {
+margin-left: -20px;
+}
+.paramdefs {
+border-collapse: collapse;
+width: 100%;
+}
+.paramdefs td {
+border-style: solid;
+border-width: 1px;
+padding-right: 10px;
+padding-left: 5px;
+}
+.required {
+font-weight: bold;
+font-style: italic;
+}
+img {
+border-style: solid;
+border-width: 2px;
+margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+  <h1 class="pluginname">@PLUGIN_KEY@</h1>    <p>Plugin Version @PLUGIN_VERSION@</p>
+  <hr style="margin-top: 20px; height: 2px; width: 100%;" noshade=
+  "noshade" />
+<p>Revised on July 1, 2015</p><h1>Contents</h1><ul><li><p><a href="#overview">Overview</a></p></li><li><p><a href="#procedures">Plugin Procedures</a></p></li><li><p><a href="#rns">Release Notes</a></p></li></ul>
+  <h1 class="sectionhead" id="overview">Overview</h1>
+  <h2>csh</h2>
+  <!-- The tool description should answer these kinds of questions:
+What is the tool itself is used for in the development
+process? Who would use this tool? What is the general use-case or
+problem that this tool solves? Look at the tool's documentation or
+website(s) to get their own descriptions. Look at Wikipedia or other
+outside websites. If there is a Hudson plugin, read their
+documentation for ideas, examples, etc. It's OK to copy word-for-word
+only if appropriate, such as FOSS - but not commercial software.
+-->
+
+  <p>The C Shell (csh) is a command-line interpreter that incorporates a history mechanism, job control facilities, interactive file name and user name completion, and a C-like syntax. It is used as an interactive login shell and a shell script command processor.</p>
+  
+  <h2>csh Links</h2>
+
+  <p>More information can be found at the <a href=
+  "http://www.mkssoftware.com/docs/man1/csh.1.asp">csh man page</a> or on the <a href=
+  "http://en.wikipedia.org/wiki/C_shell">C Shell Wikipedia page</a>.</p>
+
+  <h2>ElectricFlow Integration to csh</h2>
+  <!-- The integration description should answer the questions:
+How deep does our integration go? Why should I care? What general
+functionality does the plugin include? What functionality does
+the plugin omit?
+-->
+
+  
+  <p>This plugin has only one parameter. This parameter allows the input of any command. Using this plugin is similar to using the console and has no additional restrictions or requirements. This plugin calls the csh tool via the command line and passes the user-provided parameter.</p>
+  <p>ElectricFlow provides parameter checking, historical log reports, procedure duration statistics, and simple credentials attachment.</p>
+
+  <h2>Integrated Version</h2>
+
+  <p>This plugin was developed and tested against the version present on Visual Studio 2008.</p>
+  <hr style="margin-top: 20px; height: 2px; width: 100%;" noshade=
+  "noshade" />
+
+  <h1 class="sectionhead" id="procedures">Plugin Procedures</h1>
+
+  <div> 
+    IMPORTANT: For all parameter descriptions below, required 
+    parameters are shown in 
+    <span class='required'>bold italics</span>. 
+</div>
+	<p>IMPORTANT: In the ElectricFlow UI, go to the Home page, open the Main Menu, and click <b>Admin</b> > <b>Plugins</b> to open the Plugin Manager.</p>
+  <h2>Plugin Configuration</h2>
+  <!-- If the plugin has separate configurations then include this section,
+otherwise omit this whole section. We don't need to have a configuration
+section that just says "There is no configuration for this plugin."
+-->
+
+  <p>Plugin configurations are sets of parameters that apply across
+    some or all of the plugin's procedures. They 
+    reduce repetition of common values, create predefined sets of
+    parameters for end users, and securely store credentials
+    where needed. Each configuration is given a unique name that is
+    entered in designated parameters on procedures that use
+    them. 		<p>To create a plugin configuration, go to the ElectricFlow "Administration" tab, and then to the "Plugins" subtab. Then on the right side of the line for the specific plugin, click the "Configure" link, which opens the Configuration page.</p>
+  </p>  <h2>Plugin Configuration Parameters</h2>    <p>No configuration parameters are required for this plugin. </p>
+
+  <!-- For all parameters, the parameter name should be *exactly* the same as it appears in the
+Parameter Panel, and the first sentence(s) of the description should be
+the same as the tooltip (if there is one). After that, the parameter
+description can go into greater detail about the parameter including
+valid value ranges and examples.
+-->	
+    <h2>Plugin Procedures</h2>
+<div class="procedure" id="runCSH">
+<a name='runCSH' />
+<h3>Run csh</h3>
+<p>This procedure allows the input of any command. When the parameter is defined, the csh command is run in ElectricFlow. A log file is created, which contains the output generated by the console.</p>
+	<table class="paramdefs">
+		<thead>
+			<tr>
+				<th>Parameter</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class='required'>Command</td>
+				<td>Provide the C shell command you want to execute. Remember to use correct syntax. (Required)</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	
+	<!--ScreenShots if necessary-->
+
+	 <h2>Parameter Form</h2>
+	<img src="../../plugins/@PLUGIN_KEY@/images/CSH-1.png" alt="screenshot" />
+	
+	<h2>Log File Example</h2>
+	<img src="../../plugins/@PLUGIN_KEY@/images/CSH-2.png" alt="screenshot" /> 
+
+</div>
+  
+  <!--
+  <hr style="margin-top: 20px; height: 2px; width: 100%;" noshade=
+  "noshade" />
+
+  <h1 class="sectionhead">Examples and Use Cases</h1>-->
+  <!-- This section is for examples and use cases, including screenshots of the new Parameter Panel with example values filled in.
+Unfortunately, I can't tell you what exactly to put here, but it's OK to put what seems like too much! Include both parameter
+values and output where appropriate. Use a separate 'h2' header for each example. Under the h2 header try to stay with the style
+outline used above where possible.
+-->
+  <h1 class="sectionhead" id="rns">Release Notes</h1>
+  <h2>@PLUGIN_KEY@-2.0.2</h2>    <ul>        <li>ElectricCommander was renamed to ElectricFlow.</li>    </ul>
+  <h2>@PLUGIN_KEY@-2.0.1</h2>
+
+    <ul>
+        <li>Procedure names were changed in the step picker section.</li>
+    </ul>
+  
+  <h2>@PLUGIN_KEY@-1.0.1</h2>
+  <ul>
+    <li>New XML panel parameters were added.</li>
+	<li>The Help page format was updated.</li>
+  </ul>
+</body>
+</html>

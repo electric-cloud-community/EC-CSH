@@ -1,0 +1,11 @@
+    <editor>
+	<help>/commander/pages/@PLUGIN_NAME@/@PLUGIN_KEY@_help?s=Administration&amp;ss=Plugins#runCSH
+		</help>
+      <formElement>
+            <type>textarea</type>
+            <label>Command:</label>
+            <property>cshCommand</property>
+            <documentation>Provide the C shell command you want to execute. Remember to use correct syntax.</documentation>
+            <required>1</required>
+        </formElement>
+    </editor>
